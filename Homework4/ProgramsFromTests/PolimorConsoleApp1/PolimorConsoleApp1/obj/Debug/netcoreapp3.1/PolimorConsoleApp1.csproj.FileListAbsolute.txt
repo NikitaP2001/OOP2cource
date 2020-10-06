@@ -1,0 +1,13 @@
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.csprojAssemblyReference.cache
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.AssemblyInfo.cs
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.exe
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.deps.json
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.runtimeconfig.json
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.runtimeconfig.dev.json
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.dll
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\PolimorConsoleApp1.pdb
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.dll
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.pdb
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.genruntimeconfig.cache
