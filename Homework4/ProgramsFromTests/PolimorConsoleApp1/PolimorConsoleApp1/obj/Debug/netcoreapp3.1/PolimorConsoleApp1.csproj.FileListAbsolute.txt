@@ -11,3 +11,6 @@ C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorC
 C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.dll
 C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.pdb
 C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.genruntimeconfig.cache
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\TestModifiersLibrary.dll
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\bin\Debug\netcoreapp3.1\TestModifiersLibrary.pdb
+C:\Users\1\LR\Cource2OOP\Homework4\ProgramsFromTests\PolimorConsoleApp1\PolimorConsoleApp1\obj\Debug\netcoreapp3.1\PolimorConsoleApp1.csproj.CopyComplete

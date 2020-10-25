@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "TestModifiersLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/TestModifiersLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TestModifiersLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TestModifiersLibrary/1.0.0": {
+      "type": "project",
+      "path": "../TestModifiersLibrary/TestModifiersLibrary.csproj",
+      "msbuildProject": "../TestModifiersLibrary/TestModifiersLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "TestModifiersLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\1\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\1\\LR\\Cource2OOP\\Homework4\\ProgramsFromTests\\PolimorConsoleApp1\\TestModifiersLibrary\\TestModifiersLibrary.csproj": {
+              "projectPath": "C:\\Users\\1\\LR\\Cource2OOP\\Homework4\\ProgramsFromTests\\PolimorConsoleApp1\\TestModifiersLibrary\\TestModifiersLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

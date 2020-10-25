@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "PolimorConsoleApp1/1.0.0": {
+        "dependencies": {
+          "TestModifiersLibrary": "1.0.0"
+        },
         "runtime": {
           "PolimorConsoleApp1.dll": {}
+        }
+      },
+      "TestModifiersLibrary/1.0.0": {
+        "runtime": {
+          "TestModifiersLibrary.dll": {}
         }
       }
     }
   },
   "libraries": {
     "PolimorConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TestModifiersLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

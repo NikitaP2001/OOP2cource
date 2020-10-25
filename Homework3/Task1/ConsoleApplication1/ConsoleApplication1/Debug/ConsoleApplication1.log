@@ -1,2 +1,3 @@
-﻿  ConsoleApplication1.cpp
-  ConsoleApplication1.vcxproj -> C:\Users\1\LR\Cource2OOP\Work1\Task1\ConsoleApplication1\Debug\ConsoleApplication1.exe
+﻿cl : command line warning D9025: overriding '/FAcs' with '/FAu'
+  ConsoleApplication1.cpp
+  ConsoleApplication1.vcxproj -> C:\Users\1\LR\Cource2OOP\Homework3\Task1\ConsoleApplication1\Debug\ConsoleApplication1.exe
