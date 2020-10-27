@@ -23,8 +23,9 @@ namespace LR1
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            workbook = WorkBook.Load("test.xlsx");
-            sheet = workbook.WorkSheets.First();
+            workbook = WorkBook.Create(ExcelFileFormat.XLSX);
+            workbook.Metadata.Author = "User";
+            sheet = workbook.CreateWorkSheet("new_sheet");
             UpdateTable();
         }
         private void FillGrid()
@@ -47,8 +48,6 @@ namespace LR1
 
         private void ExcelGrid_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            WorkBook workbook = WorkBook.Load("test.xlsx");
-            WorkSheet sheet = workbook.WorkSheets.First();
             if (sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula == "")
             {
                 ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
@@ -64,10 +63,11 @@ namespace LR1
 
         private void ExcelGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula =
+            try //try to write grid value as Excel cell formula. If formula contains mistake we get exeption
+            {   sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula = 
                     ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
+                    sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Value.ToString();
             }
             catch 
             {
@@ -84,9 +84,10 @@ namespace LR1
             }
             finally
             {
-                workbook.SaveAs("test.xlsx");
                 UpdateTable();
             }
+
+
         }
 
         private void UpdateTable()
@@ -95,9 +96,43 @@ namespace LR1
             {
                 for (int j = 0; j < ExcelGrid.Rows.Count; j++)
                 {
+                    try
+                    {
                     ExcelGrid.Rows[j].Cells[i].Value =
                     sheet[ExcelGrid.Columns[i].HeaderText + (j + 1).ToString()].Value.ToString();
+                    }
+                    catch
+                    {
+                        ExcelGrid.Rows[j].Cells[i].Value = "Error";
+                    }
+
                 }
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {          
+
+            saveFileDialog1.Filter = "xlsx files (*.xlsx)|*.xlsx|xls files (*.xls)|*.xls";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog1.FileName);
+            }
+        }
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "xlsx files (*.xlsx)|*.xlsx|xls files (*.xls)|*.xls";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                workbook = WorkBook.Load(openFileDialog1.FileName);
+                sheet = workbook.WorkSheets.First();
+                UpdateTable();
             }
         }
     }
