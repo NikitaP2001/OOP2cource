@@ -16,10 +16,10 @@ namespace LR1
     {
         WorkSheet sheet;
         WorkBook workbook;
+        char header = 'A';
         public Form1()
         {
-            InitializeComponent();
-            FillGrid();     
+            InitializeComponent(); 
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace LR1
         }
         private void FillGrid()
         {
-            for (int i = 0; i < ExcelGrid.Columns.Count*5; i++)
+            for (int i = 0; i < ExcelGrid.Columns.Count*4; i++)
             {
                 ExcelGrid.Rows.Add();
             }
@@ -110,7 +110,7 @@ namespace LR1
             }
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        public void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {          
 
             saveFileDialog1.Filter = "xlsx files (*.xlsx)|*.xlsx|xls files (*.xls)|*.xls";
@@ -134,6 +134,45 @@ namespace LR1
                 sheet = workbook.WorkSheets.First();
                 UpdateTable();
             }
+        }
+          //Creating new bottom rows and right cols
+        private void ExcelGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex +1 == ExcelGrid.ColumnCount) //Cheack where user click
+            {
+                ExcelGrid.Columns.Add(((char)(header + 1)).ToString(), ((char)(header + 1)).ToString());
+                header = (char)(header + 1);
+            }
+            if (e.RowIndex + 1 == ExcelGrid.RowCount)   //Cheack where user click
+            {
+                ExcelGrid.Rows.Add();
+            }
+        }
+          //Ask user realy want to terminate process
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Configure the message box to be displayed
+            string messageBoxText = "Do you want to save changes?";
+            string caption = "MyExcel";
+            MessageBoxButtons button = MessageBoxButtons.YesNoCancel;
+            MessageBoxIcon icon = MessageBoxIcon.Warning ;
+            // Display message box
+            DialogResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+            EventArgs y = new EventArgs();
+            // Process message box results
+            switch (result) 
+            {
+                case DialogResult.Yes:
+                    saveToolStripMenuItem_Click(sender, y);  //invoking save dialog method
+                    break;
+                case DialogResult.No:
+                    //Form closing
+                    break;
+                case DialogResult.Cancel:
+                    e.Cancel = true;  //Cancel closing
+                    break;
+            }
+
         }
     }
 } 

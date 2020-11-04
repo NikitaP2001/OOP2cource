@@ -30,22 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ExcelGrid = new System.Windows.Forms.DataGridView();
-            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.E = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.F = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.G = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.H = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ExcelGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -58,14 +51,7 @@
             this.ExcelGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ExcelGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ExcelGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.A,
-            this.Column1,
-            this.C,
-            this.D,
-            this.E,
-            this.F,
-            this.G,
-            this.H});
+            this.A});
             this.ExcelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ExcelGrid.Location = new System.Drawing.Point(0, 28);
             this.ExcelGrid.Name = "ExcelGrid";
@@ -74,48 +60,9 @@
             this.ExcelGrid.Size = new System.Drawing.Size(778, 422);
             this.ExcelGrid.TabIndex = 0;
             this.ExcelGrid.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.ExcelGrid_CellBeginEdit);
+            this.ExcelGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExcelGrid_CellClick);
             this.ExcelGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExcelGrid_CellEndEdit);
             this.ExcelGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ExcelGrid_CellFormatting);
-            // 
-            // A
-            // 
-            this.A.HeaderText = "A";
-            this.A.Name = "A";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "B";
-            this.Column1.Name = "Column1";
-            // 
-            // C
-            // 
-            this.C.HeaderText = "C";
-            this.C.Name = "C";
-            // 
-            // D
-            // 
-            this.D.HeaderText = "D";
-            this.D.Name = "D";
-            // 
-            // E
-            // 
-            this.E.HeaderText = "E";
-            this.E.Name = "E";
-            // 
-            // F
-            // 
-            this.F.HeaderText = "F";
-            this.F.Name = "F";
-            // 
-            // G
-            // 
-            this.G.HeaderText = "G";
-            this.G.Name = "G";
-            // 
-            // H
-            // 
-            this.H.HeaderText = "H";
-            this.H.Name = "H";
             // 
             // menuStrip1
             // 
@@ -141,9 +88,16 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -155,12 +109,10 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // openToolStripMenuItem
+            // A
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.A.HeaderText = "A";
+            this.A.Name = "A";
             // 
             // Form1
             // 
@@ -171,7 +123,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MyExcel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ExcelGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
@@ -186,14 +139,6 @@
 
         private System.Windows.Forms.DataGridView ExcelGrid;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn A;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D;
-        private System.Windows.Forms.DataGridViewTextBoxColumn E;
-        private System.Windows.Forms.DataGridViewTextBoxColumn F;
-        private System.Windows.Forms.DataGridViewTextBoxColumn G;
-        private System.Windows.Forms.DataGridViewTextBoxColumn H;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -201,6 +146,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn A;
     }
 }
 
