@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ExcelGrid = new System.Windows.Forms.DataGridView();
+            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +39,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ExcelGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -63,6 +63,11 @@
             this.ExcelGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExcelGrid_CellClick);
             this.ExcelGrid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ExcelGrid_CellEndEdit);
             this.ExcelGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.ExcelGrid_CellFormatting);
+            // 
+            // A
+            // 
+            this.A.HeaderText = "A";
+            this.A.Name = "A";
             // 
             // menuStrip1
             // 
@@ -104,15 +109,11 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // A
-            // 
-            this.A.HeaderText = "A";
-            this.A.Name = "A";
             // 
             // Form1
             // 

@@ -28,15 +28,15 @@ namespace LR1
             sheet = workbook.CreateWorkSheet("new_sheet");
             UpdateTable();
         }
-        private void FillGrid()
+        //get value and formula from worksheet methods
+        public string GetFormula(string cell)
         {
-            for (int i = 0; i < ExcelGrid.Columns.Count*4; i++)
-            {
-                ExcelGrid.Rows.Add();
-            }
-            
+            return sheet[cell].Formula;
         }
-
+        public string GetValue(string cell)
+        {
+            return sheet[cell].Value.ToString();
+        }
         //Numerating created rows
 
         private void ExcelGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -51,11 +51,11 @@ namespace LR1
             if (sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula == "")
             {
                 ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
-                sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Value.ToString();
+                GetValue(ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString());
             } else
             {
                 ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
-                sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula;
+                GetFormula(ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString());
             }
         }
 
@@ -67,7 +67,7 @@ namespace LR1
             {   sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Formula = 
                     ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                 ExcelGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value =
-                    sheet[ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString()].Value.ToString();
+                    GetValue(ExcelGrid.Columns[e.ColumnIndex].HeaderText + (e.RowIndex + 1).ToString());
             }
             catch 
             {
@@ -86,7 +86,6 @@ namespace LR1
             {
                 UpdateTable();
             }
-
 
         }
 
@@ -124,6 +123,23 @@ namespace LR1
         }
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string messageBoxText = "Do you want to save changes?";
+            string caption = "MyExcel";
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            MessageBoxIcon icon = MessageBoxIcon.Warning;
+            // Display message box
+            DialogResult result = MessageBox.Show(messageBoxText, caption, button, icon);
+            EventArgs y = new EventArgs();
+            // Process message box results
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    saveToolStripMenuItem_Click(sender, y);  //invoking save dialog method
+                    break;
+                case DialogResult.No:
+                    //not to save changes
+                    break;
+            }
             openFileDialog1.Filter = "xlsx files (*.xlsx)|*.xlsx|xls files (*.xls)|*.xls";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
@@ -138,15 +154,26 @@ namespace LR1
           //Creating new bottom rows and right cols
         private void ExcelGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex +1 == ExcelGrid.ColumnCount) //Cheack where user click
+            if ((e.ColumnIndex +1 == ExcelGrid.ColumnCount) && (e.RowIndex != -1)) //Cheack where user click
             {
                 ExcelGrid.Columns.Add(((char)(header + 1)).ToString(), ((char)(header + 1)).ToString());
                 header = (char)(header + 1);
             }
-            if (e.RowIndex + 1 == ExcelGrid.RowCount)   //Cheack where user click
+            if ((e.RowIndex + 1 == ExcelGrid.RowCount) && (e.ColumnIndex != -1))  //Cheack where user click
             {
                 ExcelGrid.Rows.Add();
             }
+            if ((e.ColumnIndex + 1 == ExcelGrid.ColumnCount) && (e.RowIndex == -1) && (e.ColumnIndex > 0)) //Cheack where user click
+            {
+                ExcelGrid.Columns.RemoveAt(e.ColumnIndex);
+                header = (char)(header - 1);
+            }
+            if ((e.RowIndex + 1 == ExcelGrid.RowCount) && (e.ColumnIndex == -1) && (e.RowIndex > 0))  //Cheack where user click
+            {
+                DataGridViewRow dgvDelRow = ExcelGrid.Rows[e.RowIndex-1];
+                ExcelGrid.Rows.Remove(dgvDelRow);
+            }
+            UpdateTable();
         }
           //Ask user realy want to terminate process
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -173,6 +200,12 @@ namespace LR1
                     break;
             }
 
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Possible commads:" +
+                             " +, -, /, *, max(), min()");
         }
     }
 } 

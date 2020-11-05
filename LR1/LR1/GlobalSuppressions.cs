@@ -6,3 +6,4 @@
 
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Стиль", "IDE1006:Стили именования", Justification = "<Ожидание>", Scope = "member", Target = "~M:LR1.Form1.saveToolStripMenuItem_Click(System.Object,System.EventArgs)")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Стиль", "IDE1006:Стили именования", Justification = "<Ожидание>", Scope = "member", Target = "~M:LR1.Form1.openToolStripMenuItem_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Стиль", "IDE1006:Стили именования", Justification = "<Ожидание>", Scope = "member", Target = "~M:LR1.Form1.helpToolStripMenuItem_Click(System.Object,System.EventArgs)")]
