@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<catalog>
+  <scientist>
+    <Name>Name001</Name>
+    <Facultet>Facultet001</Facultet>
+    <Cafedra>Cafedra001</Cafedra>
+    <Degree>Degree1</Degree>
+    <Status>status1</Status>
+  </scientist>
+  <scientist>
+    <Name>Name002</Name>
+    <Facultet>Facultet002</Facultet>
+    <Cafedra>Cafedra002</Cafedra>
+    <Degree>Degree2</Degree>
+    <Status>status2</Status>
+  </scientist>
+  <scientist>
+    <Name>Name009</Name>
+    <Facultet>Facultet001</Facultet>
+    <Cafedra>Cafedra003</Cafedra>
+    <Degree>Degree2</Degree>
+    <Status>status1</Status>
+  </scientist>
+  <scientist>
+    <Name>Name003</Name>
+    <Facultet>Facultet001</Facultet>
+    <Cafedra>Cafedra002</Cafedra>
+    <Degree>Degree1</Degree>
+    <Status>status3</Status>
+  </scientist>
+  <scientist>
+    <Name>Name004</Name>
+    <Facultet>Facultet003</Facultet>
+    <Cafedra>Cafedra001</Cafedra>
+    <Degree>Degree1</Degree>
+    <Status>status2</Status>
+  </scientist>
+  <scientist>
+    <Name>Name005</Name>
+    <Facultet>Facultet002</Facultet>
+    <Cafedra>Cafedra002</Cafedra>
+    <Degree>Degree4</Degree>
+    <Status>status1</Status>
+  </scientist>
+
+</catalog>

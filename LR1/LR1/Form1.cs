@@ -165,6 +165,24 @@ namespace LR1
             }
             if ((e.ColumnIndex + 1 == ExcelGrid.ColumnCount) && (e.RowIndex == -1) && (e.ColumnIndex > 0)) //Cheack where user click
             {
+                for (int i = 0; i < ExcelGrid.Columns.Count; i++)
+                {
+                    for (int j = 0; j < ExcelGrid.Rows.Count; j++)
+                    {
+                        if (i == e.ColumnIndex - 1)
+                        {
+                            try
+                            {
+                                ExcelGrid.Rows[j].Cells[i].Value =
+                                sheet[ExcelGrid.Columns[i].HeaderText + (j + 1).ToString()].Value.ToString();
+                            }
+                            catch
+                            {
+                                ExcelGrid.Rows[j].Cells[i].Value = "Error";
+                            }
+                        }
+                    }
+                }
                 ExcelGrid.Columns.RemoveAt(e.ColumnIndex);
                 header = (char)(header - 1);
             }
