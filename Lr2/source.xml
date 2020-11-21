@@ -2,45 +2,73 @@
 <?xml-stylesheet type="text/xsl" href="style.xsl"?>
 <catalog>
   <scientist>
-    <Name>Name001</Name>
-    <Facultet>Facultet001</Facultet>
-    <Cafedra>Cafedra001</Cafedra>
-    <Degree>Degree1</Degree>
-    <Status>status1</Status>
+    <Name>Vasya</Name>
+    <Facultet>Philosophy</Facultet>
+    <Cafedra>Logic</Cafedra>
+    <Degree>PhD</Degree>
+    <Status>Docent</Status>
   </scientist>
   <scientist>
-    <Name>Name002</Name>
-    <Facultet>Facultet002</Facultet>
-    <Cafedra>Cafedra002</Cafedra>
-    <Degree>Degree2</Degree>
-    <Status>status2</Status>
+    <Name>Petia</Name>
+    <Facultet>Philosophy</Facultet>
+    <Cafedra>Logic</Cafedra>
+    <Degree>PhD</Degree>
+    <Status>Docent</Status>
   </scientist>
   <scientist>
-    <Name>Name009</Name>
-    <Facultet>Facultet001</Facultet>
-    <Cafedra>Cafedra003</Cafedra>
-    <Degree>Degree2</Degree>
-    <Status>status1</Status>
+    <Name>Olexander</Name>
+    <Facultet>Philosophy</Facultet>
+    <Cafedra>History</Cafedra>
+    <Degree>PhD</Degree>
+    <Status>Professor</Status>
   </scientist>
   <scientist>
-    <Name>Name003</Name>
-    <Facultet>Facultet001</Facultet>
-    <Cafedra>Cafedra002</Cafedra>
-    <Degree>Degree1</Degree>
-    <Status>status3</Status>
+    <Name>Nikita</Name>
+    <Facultet>Philosophy</Facultet>
+    <Cafedra>History</Cafedra>
+    <Degree>Doctor</Degree>
+    <Status>Professor</Status>
   </scientist>
   <scientist>
-    <Name>Name004</Name>
-    <Facultet>Facultet003</Facultet>
-    <Cafedra>Cafedra001</Cafedra>
-    <Degree>Degree1</Degree>
-    <Status>status2</Status>
+    <Name>Oleksei</Name>
+    <Facultet>Philosophy</Facultet>
+    <Cafedra>Politologic</Cafedra>
+    <Degree>Doctor</Degree>
+    <Status>Professor</Status>
   </scientist>
   <scientist>
-    <Name>Name005</Name>
-    <Facultet>Facultet002</Facultet>
-    <Cafedra>Cafedra002</Cafedra>
-    <Degree>Degree4</Degree>
-    <Status>status1</Status>
+    <Name>Mihail</Name>
+    <Facultet>Physics</Facultet>
+    <Cafedra>Cvantium Theory</Cafedra>
+    <Degree>Doctor</Degree>
+    <Status>Professor</Status>
+  </scientist>
+  <scientist>
+    <Name>Yrii</Name>
+    <Facultet>Physics</Facultet>
+    <Cafedra>Astronnomy</Cafedra>
+    <Degree>Aspirant</Degree>
+    <Status>Docent</Status>
+  </scientist>
+  <scientist>
+    <Name>Gregoriy</Name>
+    <Facultet>Faculty of Computer Science end cyberneticks</Facultet>
+    <Cafedra>TTP</Cafedra>
+    <Degree>Aspirant</Degree>
+    <Status>Docent</Status>
+  </scientist>
+  <scientist>
+    <Name>Dmitriy</Name>
+    <Facultet>Faculty of Computer Science end cyberneticks</Facultet>
+    <Cafedra>TK</Cafedra>
+    <Degree>Aspirant</Degree>
+    <Status>Docent</Status>
+  </scientist>
+  <scientist>
+    <Name>Vatslav</Name>
+    <Facultet>Faculty of Computer Science end cyberneticks</Facultet>
+    <Cafedra>TK</Cafedra>
+    <Degree>Aspirant</Degree>
+    <Status>Docent</Status>
   </scientist>
 </catalog>

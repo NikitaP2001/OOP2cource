@@ -19,12 +19,12 @@ namespace XMLReader
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NewScan_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "New scan")
+            if (NewScan.Text == "New scan")
             {
-                button1.Text = "First scan";
-                button2.Enabled = false;
+                NewScan.Text = "First scan";
+                NextScan.Enabled = false;
                 ScanValue.Enabled = false;
                 Filter_.Enabled = false;
                 method.Enabled = true;
@@ -45,15 +45,15 @@ namespace XMLReader
                         break;
                 }
                 richTextBox1.Text = a.DocToString();
-                button1.Text = "New scan";
-                button2.Enabled = true;
+                NewScan.Text = "New scan";
+                NextScan.Enabled = true;
                 ScanValue.Enabled = true;
                 Filter_.Enabled = true;
                 method.Enabled = false;
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void NextScan_Click(object sender, EventArgs e)
         {
             richTextBox1.Text = "";
             switch (Filter_.SelectedIndex)
@@ -77,7 +77,7 @@ namespace XMLReader
             richTextBox1.Text = a.DocToString();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ToHtml_Click(object sender, EventArgs e)
         {
             string content = a.TransformXMLToHTML();
             System.IO.File.WriteAllText(@"C:\Users\1\LR\Cource2OOP\Lr2\res.html", content);

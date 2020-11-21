@@ -30,16 +30,16 @@
         {
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NewScan = new System.Windows.Forms.Button();
             this.Filter_ = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ToHtml = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.method = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ScanValue = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NextScan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,16 +64,16 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // button1
+            // NewScan
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(49, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 42);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "New scan";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.NewScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NewScan.Location = new System.Drawing.Point(49, 21);
+            this.NewScan.Name = "NewScan";
+            this.NewScan.Size = new System.Drawing.Size(130, 42);
+            this.NewScan.TabIndex = 2;
+            this.NewScan.Text = "New scan";
+            this.NewScan.UseVisualStyleBackColor = true;
+            this.NewScan.Click += new System.EventHandler(this.NewScan_Click);
             // 
             // Filter_
             // 
@@ -95,20 +95,30 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.ToHtml);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.method);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ScanValue);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.NextScan);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.NewScan);
             this.panel1.Controls.Add(this.Filter_);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(472, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 450);
             this.panel1.TabIndex = 5;
+            // 
+            // ToHtml
+            // 
+            this.ToHtml.Location = new System.Drawing.Point(207, 240);
+            this.ToHtml.Name = "ToHtml";
+            this.ToHtml.Size = new System.Drawing.Size(105, 35);
+            this.ToHtml.TabIndex = 6;
+            this.ToHtml.Text = "To Html";
+            this.ToHtml.UseVisualStyleBackColor = true;
+            this.ToHtml.Click += new System.EventHandler(this.ToHtml_Click);
             // 
             // label3
             // 
@@ -153,17 +163,17 @@
             this.ScanValue.Size = new System.Drawing.Size(263, 30);
             this.ScanValue.TabIndex = 7;
             // 
-            // button2
+            // NextScan
             // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(185, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 42);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Next scan";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.NextScan.Enabled = false;
+            this.NextScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NextScan.Location = new System.Drawing.Point(185, 21);
+            this.NextScan.Name = "NextScan";
+            this.NextScan.Size = new System.Drawing.Size(131, 42);
+            this.NextScan.TabIndex = 6;
+            this.NextScan.Text = "Next scan";
+            this.NextScan.UseVisualStyleBackColor = true;
+            this.NextScan.Click += new System.EventHandler(this.NextScan_Click);
             // 
             // label1
             // 
@@ -175,16 +185,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Choose filter:";
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(207, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 35);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "To Html";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,7 +195,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "XmlReader";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -206,16 +206,16 @@
 
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button NewScan;
         private System.Windows.Forms.ComboBox Filter_;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button NextScan;
         private System.Windows.Forms.TextBox ScanValue;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox method;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ToHtml;
     }
 }
 
